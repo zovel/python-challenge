@@ -3,6 +3,8 @@ import os
 import csv
 budget_data=os.path.join('budget_data.csv')
 net=0
+profloss=[]
+change=
 
 #The total number of months included in the dataset
 with open(budget_data,newline="") as totalmonths_csv:
@@ -11,24 +13,35 @@ with open(budget_data,newline="") as totalmonths_csv:
     value=len(list(totalmonths_reader))
 
 #The total net amount of "Profit/Losses" over the entire period
-with open (budget_data,newline="") as profitloss_csv:
-    profitloss_reader=csv.reader(profitloss_csv,delimiter=",")
-    next(profitloss_reader,None)
-    for row in profitloss_reader:
-        net +=int(row[1])
+for row in totalmonths_reader:
+    net +=int(row[1])
 
 #The average change in "Profit/Losses" between months over the entire period
 with open (budget_data,newline="") as averagechange_csv:
     averagechange_reader=csv.reader(averagechange_csv,delimiter=",")
     next(averagechange_reader,None)
-        #(month 2-month 1)/total count(month 1 to 86)-1//enumerate???
-        #probably going to be a data function that can be input in the following two calculations
+
+for row in averagechange_reader:
+    def change_in_profloss(profloss):
+       return(int(row[1]-change))
+       change = change_in_profloss(profloss)
+average_change = (sum(profloss)/int(len(profloss)))
+
+
 
 #The greatest increase in profits (date and amount) over the entire period
 with open (budget_data,newline="") as greatestincrease_csv:
     greatestincrease_reader=csv.reader(greatestincrease_csv,delimiter=",")
     next(greatestincrease_reader,None)
-    #use enumerate function here
+  
+greatest_increase = max([value for value in profloss])
+greatest_decrease = min([value for value in profloss])
+   for row in monthlyanalysis:
+       if row[1]= greatest_increase:
+           month1 = (row[0])
+       if row[1]= greatest_decrease:
+           month2 = (row[0])
+
 
 #The greatest decrease in losses (date and amount) over the entire period
 with open (budget_data,newline="") as greatestdecrease_csv:
