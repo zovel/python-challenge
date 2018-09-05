@@ -18,6 +18,10 @@ with open (budget_data,newline="") as profitloss_csv:
         net +=int(row[1])
 
 #The average change in "Profit/Losses" between months over the entire period
+with open (budget_data,newline="") as averagechange_csv:
+    averagechange_reader=csv.reader(averagechange_csv,delimiter=",")
+    next(averagechange_reader,None)
+        #(row 87-row 2)/count(row 2 to 87)-1
 
 #The greatest increase in profits (date and amount) over the entire period
 
@@ -28,3 +32,4 @@ print("Financial Analysis")
 print("------------------")
 print(f"Total Months: {value}")
 print(f"Total: $ {net}")
+#print(f"Average Change:)
