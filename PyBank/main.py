@@ -21,18 +21,20 @@ with open (budget_data,newline="") as profitloss_csv:
 with open (budget_data,newline="") as averagechange_csv:
     averagechange_reader=csv.reader(averagechange_csv,delimiter=",")
     next(averagechange_reader,None)
-        #(month 2-month 1)/total count(month 1 to 86)-1
+        #(month 2-month 1)/total count(month 1 to 86)-1//enumerate???
         #probably going to be a data function that can be input in the following two calculations
 
 #The greatest increase in profits (date and amount) over the entire period
 with open (budget_data,newline="") as greatestincrease_csv:
     greatestincrease_reader=csv.reader(greatestincrease_csv,delimiter=",")
     next(greatestincrease_reader,None)
+    #use enumerate function here
 
 #The greatest decrease in losses (date and amount) over the entire period
 with open (budget_data,newline="") as greatestdecrease_csv:
     greatestdecrease_reader=csv.reader(greatestdecrease_csv,delimiter=",")
     next(greatestdecrease_reader,None)
+    #use enumerate function here
 
 
 #PRINT EM UP
